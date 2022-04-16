@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
     <TableRow
         android:id="@+id/result"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/outputResult"
@@ -18,216 +18,213 @@
             android:layout_height="wrap_content"
             android:layout_weight="100"
             android:ems="10"
-            android:inputType="numberSigned" />
+            android:inputType="number"
+            android:text="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     </TableRow>
 
-    <TableRow
-        android:id="@+id/operations"
-        android:layout_width="match_parent"
+    <TableLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/plus"
-            android:layout_width="wrap_content"
+        <TableRow
+            android:id="@+id/operations"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:text="+" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/minus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:text="-" />
+            <Button
+                android:id="@+id/plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:text="+"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/mul"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:text="*" />
+            <Button
+                android:id="@+id/minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:text="-"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/div"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:text="/" />
+            <Button
+                android:id="@+id/mul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:text="*"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/div"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:text="/"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    </TableRow>
+        </TableRow>
 
-    <TableRow
-        android:id="@+id/d789"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <TableRow
+            android:id="@+id/d789"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/b7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button7Pressed"
+                android:text="7"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/b4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button7Pressed"
-            android:text="7" />
+            <Button
+                android:id="@+id/b8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button8Pressed"
+                android:text="8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/b5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button8Pressed"
-            android:text="8" />
+            <Button
+                android:id="@+id/b9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button9Pressed"
+                android:text="9"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/b6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button9Pressed"
-            android:text="9" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </TableRow>
+        <TableRow
+            android:id="@+id/d456"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TableRow
-        android:id="@+id/d456"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            <Button
+                android:id="@+id/b4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button4Pressed"
+                android:text="4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/b5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button5Pressed"
+                android:text="5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/b4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button4Pressed"
-            android:text="4" />
+            <Button
+                android:id="@+id/b6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button6Pressed"
+                android:text="6"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/b5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button5Pressed"
-            android:text="5" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/b6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button6Pressed"
-            android:text="6" />
+        <TableRow
+            android:id="@+id/d123"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </TableRow>
+            <Button
+                android:id="@+id/b1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button1Pressed"
+                android:text="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <TableRow
-        android:id="@+id/d123"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            <Button
+                android:id="@+id/b2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button2Pressed"
+                android:text="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/b3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button3Pressed"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/b1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button1Pressed"
-            android:text="1" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/b2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button2Pressed"
-            android:text="2" />
+        <TableRow
+            android:id="@+id/d0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/b3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button3Pressed"
-            android:text="3" />
+            <Button
+                android:id="@+id/b0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="6dp"
+                android:insetRight="6dp"
+                android:onClick="button0Pressed"
+                android:text="0"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </TableRow>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <TableRow
-        android:id="@+id/d0"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <Button
-            android:id="@+id/b0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:insetLeft="6dp"
-            android:insetRight="6dp"
-            android:onClick="button0Pressed"
-            android:text="0" />
+        </TableRow>
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    </TableLayout>
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/enter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="=" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </TableRow>
-
-</TableLayout>
+</LinearLayout>
