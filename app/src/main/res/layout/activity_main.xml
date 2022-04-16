@@ -85,6 +85,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button7Pressed"
             android:text="7" />
 
         <Button
@@ -93,6 +94,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button8Pressed"
             android:text="8" />
 
         <Button
@@ -101,6 +103,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button9Pressed"
             android:text="9" />
 
         <Space
@@ -123,6 +126,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button4Pressed"
             android:text="4" />
 
         <Button
@@ -131,6 +135,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button5Pressed"
             android:text="5" />
 
         <Button
@@ -139,6 +144,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button6Pressed"
             android:text="6" />
 
         <Space
@@ -161,6 +167,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button1Pressed"
             android:text="1" />
 
         <Button
@@ -169,6 +176,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button2Pressed"
             android:text="2" />
 
         <Button
@@ -177,6 +185,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button3Pressed"
             android:text="3" />
 
         <Space
@@ -199,6 +208,7 @@
             android:layout_height="wrap_content"
             android:insetLeft="6dp"
             android:insetRight="6dp"
+            android:onClick="button0Pressed"
             android:text="0" />
 
         <Space
