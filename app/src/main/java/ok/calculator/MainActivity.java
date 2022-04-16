@@ -1,4 +1,4 @@
-package dk.calculator;
+package ok.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
