@@ -10,7 +10,9 @@ import java.math.BigInteger;
 
 public class MainActivity extends AppCompatActivity {
     char op;
-    String a, b;
+    BigInteger a, b;
+    BigInteger ten = new BigInteger("10");
+    BigInteger zero = new BigInteger("0");
     TextView output;
 
 
@@ -19,103 +21,101 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        a = b = "0";
+        a = b = new BigInteger("0");
         output = (TextView) findViewById(R.id.outputResult);
     }
 
     /** Called when the user touches the button */
     public void button0Pressed(View view) {
-        b += "0";
-        output.setText(b);
+        b = b.multiply(ten);
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button1Pressed(View view) {
-        b += "1";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("1")));
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button2Pressed(View view) {
-        b += "2";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("2")));
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button3Pressed(View view) {
-        b += "3";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("3")));
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button4Pressed(View view) {
-        b += "4";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("4")));
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button5Pressed(View view) {
-        b += "5";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("5")));
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button6Pressed(View view) {
-        b += "6";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("6")));
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button7Pressed(View view) {
-        b += "7";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("7")));
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button8Pressed(View view) {
-        b += "8";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("8")));
+        output.setText(b.toString());
     }
     /** Called when the user touches the button */
     public void button9Pressed(View view) {
-        b += "9";
-        output.setText(b);
+        b = b.multiply(ten).add(new BigInteger(("9")));
+        output.setText(b.toString());
     }
     public void buttonPlusPressed(View view) {
         a = b;
-        b = "0";
+        b = zero;
         op = '+';
-        output.setText(b);
+        output.setText(b.toString());
     }
     public void buttonMinPressed(View view) {
         a = b;
-        b = "0";
+        b = zero;
         op = '-';
-        output.setText(b);
+        output.setText(b.toString());
     }
     public void buttonMultPressed(View view) {
         a = b;
-        b = "0";
+        b = zero;
         op = '*';
-        output.setText(b);
+        output.setText(b.toString());
     }
     public void buttonDivPressed(View view) {
         a = b;
-        b = "0";
+        b = zero;
         op = '/';
-        output.setText(b);
+        output.setText(b.toString());
     }
 
     public void buttonEqPressed(View view) {
-        BigInteger bigA = new BigInteger(a);
-        BigInteger bigB = new BigInteger(b);
         try {
             BigInteger bigResult;
             if (op == '+') {
-                bigResult = bigA.add(bigB);
+                bigResult = a.add(b);
             } else if (op == '-') {
-                bigResult = bigA.subtract(bigB);
+                bigResult = a.subtract(b);
             } else if (op == '*') {
-                bigResult = bigA.multiply(bigB);
+                bigResult = a.multiply(b);
             } else {
-                bigResult = bigA.divide(bigB);
+                bigResult = a.divide(b);
             }
-            b = bigResult.toString();
-            output.setText(b);
+            b = bigResult;
+            output.setText(b.toString());
         } catch (ArithmeticException ex) {
-            b = "0";
+            b = zero;
             output.setText("ERROR: " + ex);
         }
     }
