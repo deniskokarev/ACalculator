@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        a = b = new BigInteger("0");
+        a = b = zero;
         output = (TextView) findViewById(R.id.outputResult);
     }
 
@@ -76,24 +76,28 @@ public class MainActivity extends AppCompatActivity {
         output.setText(b.toString());
     }
     public void buttonPlusPressed(View view) {
+        buttonEqPressed(view);
         a = b;
         b = zero;
         op = '+';
         output.setText(b.toString());
     }
     public void buttonMinPressed(View view) {
+        buttonEqPressed(view);
         a = b;
         b = zero;
         op = '-';
         output.setText(b.toString());
     }
     public void buttonMultPressed(View view) {
+        buttonEqPressed(view);
         a = b;
         b = zero;
         op = '*';
         output.setText(b.toString());
     }
     public void buttonDivPressed(View view) {
+        buttonEqPressed(view);
         a = b;
         b = zero;
         op = '/';
@@ -109,8 +113,10 @@ public class MainActivity extends AppCompatActivity {
                 bigResult = a.subtract(b);
             } else if (op == '*') {
                 bigResult = a.multiply(b);
-            } else {
+            } else if (op == '/') {
                 bigResult = a.divide(b);
+            } else {
+                return;
             }
             b = bigResult;
             output.setText(b.toString());
@@ -118,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             b = zero;
             output.setText("ERROR: " + ex);
         }
+        op = ' ';
     }
 
 }
