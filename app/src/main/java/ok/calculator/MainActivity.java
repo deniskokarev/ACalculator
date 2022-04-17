@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.math.BigInteger;
+
 public class MainActivity extends AppCompatActivity {
     String display;
     TextView output;
+    String a;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         display = "";
+        a = "";
         output = (TextView) findViewById(R.id.outputResult);
     }
 
@@ -76,6 +82,20 @@ public class MainActivity extends AppCompatActivity {
     /** Called when the user touches the button */
     public void button9Pressed(View view) {
         display += "9";
+        output.setText(display);
+        // Do something in response to button click
+    }
+    public void buttonPlusPressed(View view) {
+        a = display;
+        display = "";
+        output.setText(display);
+        // Do something in response to button click
+    }
+    public void buttonEqPressed(View view) {
+        BigInteger bigA = new BigInteger(a);
+        BigInteger bigB = new BigInteger(display);
+        BigInteger bigResult = bigA.add(bigB);
+        display = bigResult.toString();
         output.setText(display);
         // Do something in response to button click
     }
