@@ -9,9 +9,9 @@ import android.widget.TextView;
 import java.math.BigInteger;
 
 public class MainActivity extends AppCompatActivity {
-    String display;
+    char op;
+    String a, b;
     TextView output;
-    String a;
 
 
 
@@ -19,85 +19,105 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        display = "";
-        a = "";
+        a = b = "0";
         output = (TextView) findViewById(R.id.outputResult);
     }
 
     /** Called when the user touches the button */
     public void button0Pressed(View view) {
-        display += "0";
-        output.setText(display);
-        // Do something in response to button click
+        b += "0";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button1Pressed(View view) {
-        display += "1";
-        output.setText(display);
-        // Do something in response to button click
+        b += "1";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button2Pressed(View view) {
-        display += "2";
-        output.setText(display);
-        // Do something in response to button click
+        b += "2";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button3Pressed(View view) {
-        display += "3";
-        output.setText(display);
-        // Do something in response to button click
+        b += "3";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button4Pressed(View view) {
-        display += "4";
-        output.setText(display);
-        // Do something in response to button click
+        b += "4";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button5Pressed(View view) {
-        display += "5";
-        output.setText(display);
-        // Do something in response to button click
+        b += "5";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button6Pressed(View view) {
-        display += "6";
-        output.setText(display);
-        // Do something in response to button click
+        b += "6";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button7Pressed(View view) {
-        display += "7";
-        output.setText(display);
-        // Do something in response to button click
+        b += "7";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button8Pressed(View view) {
-        display += "8";
-        output.setText(display);
-        // Do something in response to button click
+        b += "8";
+        output.setText(b);
     }
     /** Called when the user touches the button */
     public void button9Pressed(View view) {
-        display += "9";
-        output.setText(display);
-        // Do something in response to button click
+        b += "9";
+        output.setText(b);
     }
     public void buttonPlusPressed(View view) {
-        a = display;
-        display = "";
-        output.setText(display);
-        // Do something in response to button click
+        a = b;
+        b = "0";
+        op = '+';
+        output.setText(b);
     }
+    public void buttonMinPressed(View view) {
+        a = b;
+        b = "0";
+        op = '-';
+        output.setText(b);
+    }
+    public void buttonMultPressed(View view) {
+        a = b;
+        b = "0";
+        op = '*';
+        output.setText(b);
+    }
+    public void buttonDivPressed(View view) {
+        a = b;
+        b = "0";
+        op = '/';
+        output.setText(b);
+    }
+
     public void buttonEqPressed(View view) {
         BigInteger bigA = new BigInteger(a);
-        BigInteger bigB = new BigInteger(display);
-        BigInteger bigResult = bigA.add(bigB);
-        display = bigResult.toString();
-        output.setText(display);
-        // Do something in response to button click
+        BigInteger bigB = new BigInteger(b);
+        try {
+            BigInteger bigResult;
+            if (op == '+') {
+                bigResult = bigA.add(bigB);
+            } else if (op == '-') {
+                bigResult = bigA.subtract(bigB);
+            } else if (op == '*') {
+                bigResult = bigA.multiply(bigB);
+            } else {
+                bigResult = bigA.divide(bigB);
+            }
+            b = bigResult.toString();
+            output.setText(b);
+        } catch (ArithmeticException ex) {
+            b = "0";
+            output.setText("ERROR: " + ex);
+        }
     }
 
 }

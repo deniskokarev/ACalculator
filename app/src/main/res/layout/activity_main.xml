@@ -51,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:insetLeft="6dp"
                 android:insetRight="6dp"
+                android:onClick="buttonMinPressed"
                 android:text="-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -60,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:insetLeft="6dp"
                 android:insetRight="6dp"
+                android:onClick="buttonMultPressed"
                 android:text="*"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -69,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:insetLeft="6dp"
                 android:insetRight="6dp"
+                android:onClick="buttonDivPressed"
                 android:text="/"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
